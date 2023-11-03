@@ -26,4 +26,14 @@ class Cliente extends Model
     {
         return $this->hasMany(DireccionCliente::class, 'id_cliente',);
     }
+
+    /**
+     * Get all of the venta for the Cliente
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function venta(): HasMany
+    {
+        return $this->hasMany(Venta::class, 'id_venta');
+    }
 }
