@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Domicilio extends Model
 {
     use HasFactory;
-    private $table = 'domicilio';
+    protected $table = 'domicilio';
 
     /**
      * Get the repartidor that owns the Domicilio

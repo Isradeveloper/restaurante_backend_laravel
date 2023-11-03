@@ -1,0 +1,248 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Delicious Dinner API",
+        "description": "API realizada en Laravel",
+        "contact": {
+            "email": "ingisraeltrujillo@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0",
+        "x-logo": {
+            "url": "https://via.placeholder.com/190x90.png?text=L5-Swagger"
+        }
+    },
+    "paths": {
+        "/api/tipo_identificacion": {
+            "get": {
+                "tags": [
+                    "tipo_identificacion"
+                ],
+                "summary": "Muestra todos los tipos de identificacións",
+                "description": "Muestra todos los tipos de identificación.",
+                "operationId": "3f149610e81de653bf421dbe6e8d9fbc",
+                "responses": {
+                    "200": {
+                        "description": "Muestra todos los tipos de identificación"
+                    },
+                    "500": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "tipo_identificacion"
+                ],
+                "summary": "Crear un nuevo tipo de identificación",
+                "operationId": "f8f9d6dbc5eea2ffc1c90c4b34551d7d",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "nombre": {
+                                                "type": "string"
+                                            },
+                                            "codename": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "nombre": "CÉDULA DE CIUDADANÍA",
+                                    "codename": "CC"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "CREATED",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "object",
+                                            "example": {
+                                                "msg": "Se ha creado el tipo de identificación correctamente",
+                                                "tipo_identificacion": {
+                                                    "id": 1,
+                                                    "nombre": "CÉDULA DE CIUDADANÍA",
+                                                    "codename": "CC",
+                                                    "created_at": "2023-11-03T03:06:55.000000Z",
+                                                    "updated_at": "2023-11-03T03:06:55.000000Z"
+                                                }
+                                            }
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/tipo_identificacion/{id}": {
+            "get": {
+                "tags": [
+                    "tipo_identificacion"
+                ],
+                "summary": "Mostrar la información de un tipo de identificación",
+                "operationId": "554d1d13ec505ab7fd97222c058ade08",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "tipo_identificacion"
+                ],
+                "summary": "Actualizar un nuevo tipo de identificación",
+                "operationId": "9774bacaee491da120d279d410029266",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "nombre": {
+                                                "type": "string"
+                                            },
+                                            "codename": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "nombre": "CÉDULA DE CIUDADANÍA",
+                                    "codename": "CC"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "object",
+                                            "example": {
+                                                "msg": "Se ha actualizado el tipo de identificación correctamente",
+                                                "tipo_identificacion": {
+                                                    "id": 1,
+                                                    "nombre": "CÉDULA DE CIUDADANÍA",
+                                                    "codename": "CC",
+                                                    "created_at": "2023-11-03T03:06:55.000000Z",
+                                                    "updated_at": "2023-11-03T03:06:55.000000Z"
+                                                }
+                                            }
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "tipo_identificacion"
+                ],
+                "summary": "Eliminar un tipo de identificación",
+                "operationId": "3730addfffbd517d88822126af54652f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "object",
+                                            "example": {
+                                                "msg": "Se ha eliminado el tipo de identificación correctamente",
+                                                "tipo_identificacion": {
+                                                    "id": 1,
+                                                    "nombre": "CÉDULA DE CIUDADANÍA",
+                                                    "codename": "CC",
+                                                    "created_at": "2023-11-03T03:06:55.000000Z",
+                                                    "updated_at": "2023-11-03T03:06:55.000000Z"
+                                                }
+                                            }
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

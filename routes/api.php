@@ -17,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Route::get('/tipo_identificacion', 'App\Http\Controllers\TipoIdentificacionController@index');
+// Route::post('/tipo_identificacion', 'App\Http\Controllers\TipoIdentificacionController@store');
+// Route::get('/tipo_identificacion/{tipoIdentificacion}', 'App\Http\Controllers\TipoIdentificacionController@show');
+// Route::put('/tipo_identificacion/{tipoIdentificacion}', 'App\Http\Controllers\TipoIdentificacionController@update');
+
+Route::resource('/tipo_identificacion', 'App\Http\Controllers\TipoIdentificacionController');
+
+
