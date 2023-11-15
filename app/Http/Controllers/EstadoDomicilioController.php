@@ -2,45 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\TipoIdentificacion;
+use App\Models\EstadoDomicilio;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use OpenApi\Annotations as OA;
 
-/**
- * @OA\Info(
- *      version="1.0.0",
- *      title="Delicious Dinner API",
- *      description="API realizada en Laravel",
- *      x={
- *          "logo": {
- *              "url": "https://via.placeholder.com/190x90.png?text=L5-Swagger"
- *          }
- *      },
- *      @OA\Contact(
- *          email="ingisraeltrujillo@gmail.com"
- *      ),
- *      @OA\License(
- *         name="Apache 2.0",
- *         url="https://www.apache.org/licenses/LICENSE-2.0.html"
- *     )
- * )
- */
-class TipoIdentificacionController extends Controller
+
+class EstadoDomicilioController extends Controller
 {
     /**
-     * Muestra todos los tipos de identificación.
+     * Muestra todos los estados domicilio.
 
 
      * @return \Illuminate\Http\Response
      *
      * @OA\Get(
-     *     path="/api/tipo_identificacion",
-     *     tags={"tipo_identificacion"},
-     *     summary="Muestra todos los tipos de identificacións",
+     *     path="/api/estado_domicilio",
+     *     tags={"estado_domicilio"},
+     *     summary="Muestra todos los estados domicilio",
      *     @OA\Response(
      *         response=200,
-     *         description="Muestra todos los tipos de identificación"
+     *         description="Muestra todos los estados domicilio"
      *     ),
      *     @OA\Response(
      *         response="500",
@@ -50,19 +32,19 @@ class TipoIdentificacionController extends Controller
      */
     public function index()
     {
-        $tipos_identificacion = TipoIdentificacion::all();
+        $estados_domicilio = EstadoDomicilio::all();
 
         return response()->json([
-            'data' => $tipos_identificacion,
+            'data' => $estados_domicilio,
             'success' => true
         ]);
     }
 
     /**
-     * Crear un nuevo tipo de identificación
+     * Crear un nuevo estado domicilio
      * @OA\Post (
-     *     path="/api/tipo_identificacion",
-     *     tags={"tipo_identificacion"},
+     *     path="/api/estado_domicilio",
+     *     tags={"estado_domicilio"},
      *     @OA\RequestBody(
      *         @OA\MediaType(
      *             mediaType="application/json",
@@ -79,8 +61,8 @@ class TipoIdentificacionController extends Controller
      *                      )
      *                 ),
      *                 example={
-     *                     "nombre":"CÉDULA DE CIUDADANÍA",
-     *                     "codename":"CC"
+     *                     "nombre":"PENDIENTE",
+     *                     "codename":"pendiente"
      *                }
      *             )
      *         )
@@ -95,14 +77,14 @@ class TipoIdentificacionController extends Controller
      */
     public function store(Request $request)
     {
-        $tipoIdentificacion = new TipoIdentificacion();
-        $tipoIdentificacion->nombre = $request->nombre;
-        $tipoIdentificacion->codename = $request->codename;
-        $tipoIdentificacion->save();
+        $EstadoDomicilio = new EstadoDomicilio();
+        $EstadoDomicilio->nombre = $request->nombre;
+        $EstadoDomicilio->codename = $request->codename;
+        $EstadoDomicilio->save();
 
         $data = [
-            'msg' => "Se ha creado el tipo de identificación correctamente",
-            'tipo_identificacion' => $tipoIdentificacion
+            'msg' => "Se ha creado el estado domicilio correctamente",
+            'estado_domicilio' => $EstadoDomicilio
         ];
 
         return response()->json([
@@ -112,10 +94,10 @@ class TipoIdentificacionController extends Controller
     }
 
     /**
-     * Mostrar la información de un tipo de identificación
+     * Mostrar la información de un estado domicilio
      * @OA\Get (
-     *     path="/api/tipo_identificacion/{id}",
-     *     tags={"tipo_identificacion"},
+     *     path="/api/estado_domicilio/{id}",
+     *     tags={"estado_domicilio"},
      *     @OA\Parameter(
      *         in="path",
      *         name="id",
@@ -130,20 +112,20 @@ class TipoIdentificacionController extends Controller
      *     
      * )
      */
-    public function show(TipoIdentificacion $tipoIdentificacion)
+    public function show(EstadoDomicilio $EstadoDomicilio)
     {
         return response()->json([
-            'data' => $tipoIdentificacion,
+            'data' => $EstadoDomicilio,
             'success' => true
         ]);
     }
 
 
     /**
-     * Actualizar un nuevo tipo de identificación
+     * Actualizar un estado domicilio
      * @OA\Put (
-     *     path="/api/tipo_identificacion/{id}",
-     *     tags={"tipo_identificacion"},
+     *     path="/api/estado_domicilio/{id}",
+     *     tags={"estado_domicilio"},
      *     @OA\Parameter(
      *         in="path",
      *         name="id",
@@ -166,8 +148,8 @@ class TipoIdentificacionController extends Controller
      *                      )
      *                 ),
      *                 example={
-     *                     "nombre":"CÉDULA DE CIUDADANÍA",
-     *                     "codename":"CC"
+     *                     "nombre":"PENDIENTE",
+     *                     "codename":"pendiente"
      *                }
      *             )
      *         )
@@ -179,15 +161,15 @@ class TipoIdentificacionController extends Controller
      *      ),
      * )
      */
-    public function update(Request $request, TipoIdentificacion $tipoIdentificacion)
+    public function update(Request $request, EstadoDomicilio $EstadoDomicilio)
     {
-        $tipoIdentificacion->nombre = $request->nombre;
-        $tipoIdentificacion->codename = $request->codename;
-        $tipoIdentificacion->save();
+        $EstadoDomicilio->nombre = $request->nombre;
+        $EstadoDomicilio->codename = $request->codename;
+        $EstadoDomicilio->save();
 
         $data = [
-            'msg' => "Se ha actualizado el tipo de identificación correctamente",
-            'tipo_identificacion' => $tipoIdentificacion
+            'msg' => "Se ha actualizado el estado domicilio correctamente",
+            'estado_domicilio' => $EstadoDomicilio
         ];
 
         return response()->json([
@@ -197,10 +179,10 @@ class TipoIdentificacionController extends Controller
     }
 
     /**
-     * Eliminar un tipo de identificación
+     * Eliminar un estado domicilio
      * @OA\Delete (
-     *     path="/api/tipo_identificacion/{id}",
-     *     tags={"tipo_identificacion"},
+     *     path="/api/estado_domicilio/{id}",
+     *     tags={"estado_domicilio"},
      *     @OA\Parameter(
      *         in="path",
      *         name="id",
@@ -214,13 +196,13 @@ class TipoIdentificacionController extends Controller
      *      ),
      * )
      */
-    public function destroy(TipoIdentificacion $tipoIdentificacion)
+    public function destroy(EstadoDomicilio $EstadoDomicilio)
     {
-        $tipoIdentificacion->delete();
+        $EstadoDomicilio->delete();
 
         $data = [
-            'msg' => "Se ha eliminado el tipo de identificación correctamente",
-            'tipo_identificacion' => $tipoIdentificacion
+            'msg' => "Se ha eliminado el estado domicilio correctamente",
+            'estado_domicilio' => $EstadoDomicilio
         ];
 
         return response()->json([

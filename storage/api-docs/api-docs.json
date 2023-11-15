@@ -16,6 +16,1217 @@
         }
     },
     "paths": {
+        "/api/categoria_producto": {
+            "get": {
+                "tags": [
+                    "categoria_producto"
+                ],
+                "summary": "Muestra todas las categorias de productos",
+                "description": "Muestra todas las categorias de productos.",
+                "operationId": "298d86f2eb9eed4a60558a948061b7c7",
+                "responses": {
+                    "200": {
+                        "description": "Muestra todas las categorias de productos"
+                    },
+                    "500": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "categoria_producto"
+                ],
+                "summary": "Crear una nueva categoria de producto",
+                "operationId": "8db91566178205ae0db6dbef4172de7e",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "nombre": {
+                                                "type": "string"
+                                            },
+                                            "codename": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "nombre": "HAMBURGUESA",
+                                    "codename": "burger"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "CREATED"
+                    }
+                }
+            }
+        },
+        "/api/categoria_producto/{id}": {
+            "get": {
+                "tags": [
+                    "categoria_producto"
+                ],
+                "summary": "Mostrar la información de una categoria de producto",
+                "operationId": "1359e55bba9e81066e9277a00c16a596",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "categoria_producto"
+                ],
+                "summary": "Actualizar una categoria de producto",
+                "operationId": "9ccecf5132ea3d184ade0840270a3121",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "nombre": {
+                                                "type": "string"
+                                            },
+                                            "codename": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "nombre": "HAMBURGUESA",
+                                    "codename": "burger"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "categoria_producto"
+                ],
+                "summary": "Eliminar una categoria de producto",
+                "operationId": "e63fabf1fd95ae992710f10876b23ee0",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS"
+                    }
+                }
+            }
+        },
+        "/api/cliente": {
+            "get": {
+                "tags": [
+                    "cliente"
+                ],
+                "summary": "Muestra todos los clientes",
+                "description": "Muestra todos los clientes.",
+                "operationId": "e02c03db88d88a27401d817e47ab2187",
+                "responses": {
+                    "200": {
+                        "description": "Muestra todos los clientes"
+                    },
+                    "500": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "cliente"
+                ],
+                "summary": "Crear un nuevo cliente",
+                "operationId": "469f4d88a1d27b95b61b0922e033d8f3",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "id_tipo_identificacion": {
+                                                "type": "integer"
+                                            },
+                                            "identificacion": {
+                                                "type": "string"
+                                            },
+                                            "nombre": {
+                                                "type": "string"
+                                            },
+                                            "email": {
+                                                "type": "string"
+                                            },
+                                            "celular": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id_tipo_identificacion": 1,
+                                    "identificacion": "1242142",
+                                    "nombre": "Jhon Doe",
+                                    "email": "jdoe@gmail.com",
+                                    "celular": "122132425"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "CREATED"
+                    }
+                }
+            }
+        },
+        "/api/cliente/{id}": {
+            "get": {
+                "tags": [
+                    "cliente"
+                ],
+                "summary": "Mostrar la información de un cliente",
+                "operationId": "813f501e73b90e51802f8a9400987353",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "cliente"
+                ],
+                "summary": "Actualizar un nuevo cliente",
+                "operationId": "6be039ccbab018c4c6a738085884af79",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "id_tipo_identificacion": {
+                                                "type": "integer"
+                                            },
+                                            "identificacion": {
+                                                "type": "string"
+                                            },
+                                            "nombre": {
+                                                "type": "string"
+                                            },
+                                            "email": {
+                                                "type": "string"
+                                            },
+                                            "celular": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id_tipo_identificacion": 1,
+                                    "identificacion": "1242142",
+                                    "nombre": "Jhon Doe",
+                                    "email": "jdoe@gmail.com",
+                                    "celular": "122132425"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "cliente"
+                ],
+                "summary": "Eliminar un cliente",
+                "operationId": "3a430f92cf9e8f7d799e351d936f8e0e",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "object",
+                                            "example": {
+                                                "msg": "Se ha eliminado el cliente correctamente",
+                                                "cliente": {
+                                                    "id": 1,
+                                                    "nombre": "CÉDULA DE CIUDADANÍA",
+                                                    "codename": "CC",
+                                                    "created_at": "2023-11-03T03:06:55.000000Z",
+                                                    "updated_at": "2023-11-03T03:06:55.000000Z"
+                                                }
+                                            }
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/direccion_cliente": {
+            "get": {
+                "tags": [
+                    "direccion_cliente"
+                ],
+                "summary": "Muestra todas las direcciones del cliente",
+                "description": "Muestra todas las direcciones del cliente.",
+                "operationId": "87b305ca02af9ac293686a74ed5138b9",
+                "parameters": [
+                    {
+                        "name": "id_cliente",
+                        "in": "query",
+                        "description": "ID del cliente",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Muestra todas las direcciones del cliente"
+                    },
+                    "500": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "direccion_cliente"
+                ],
+                "summary": "Crear una nueva dirección cliente",
+                "operationId": "866721914211d1d3d9bd07ba53c4be21",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "id_cliente": {
+                                                "type": "integer"
+                                            },
+                                            "pais": {
+                                                "type": "string"
+                                            },
+                                            "ciudad": {
+                                                "type": "string"
+                                            },
+                                            "barrio": {
+                                                "type": "string"
+                                            },
+                                            "direccion_texto": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id_cliente": 1,
+                                    "pais": "Colombia",
+                                    "ciudad": "Soledad",
+                                    "barrio": "Centenario",
+                                    "direccion_texto": "Calle 23B"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "CREATED"
+                    }
+                }
+            }
+        },
+        "/api/direccion_cliente/{id}": {
+            "get": {
+                "tags": [
+                    "direccion_cliente"
+                ],
+                "summary": "Mostrar la información de una dirección cliente",
+                "operationId": "ebdeaf1a6b548de2f7c21274f80ca6dc",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "direccion_cliente"
+                ],
+                "summary": "Actualizar una nueva dirección cliente",
+                "operationId": "be16908e62700bb4899d430807d79d9c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "id_cliente": {
+                                                "type": "integer"
+                                            },
+                                            "pais": {
+                                                "type": "string"
+                                            },
+                                            "ciudad": {
+                                                "type": "string"
+                                            },
+                                            "barrio": {
+                                                "type": "string"
+                                            },
+                                            "direccion_texto": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id_cliente": 1,
+                                    "pais": "Colombia",
+                                    "ciudad": "Soledad",
+                                    "barrio": "Centenario",
+                                    "direccion_texto": "Calle 23B"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "direccion_cliente"
+                ],
+                "summary": "Eliminar una dirección cliente",
+                "operationId": "568500bbdef8e624ff17829b37d4455b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "object",
+                                            "example": {
+                                                "msg": "Se ha eliminado el cliente correctamente",
+                                                "cliente": {
+                                                    "id": 1,
+                                                    "nombre": "CÉDULA DE CIUDADANÍA",
+                                                    "codename": "CC",
+                                                    "created_at": "2023-11-03T03:06:55.000000Z",
+                                                    "updated_at": "2023-11-03T03:06:55.000000Z"
+                                                }
+                                            }
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/estado_domicilio": {
+            "get": {
+                "tags": [
+                    "estado_domicilio"
+                ],
+                "summary": "Muestra todos los estados domicilio",
+                "description": "Muestra todos los estados domicilio.",
+                "operationId": "9bf5fe9a94bf225ff34927d2a7e8c424",
+                "responses": {
+                    "200": {
+                        "description": "Muestra todos los estados domicilio"
+                    },
+                    "500": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "estado_domicilio"
+                ],
+                "summary": "Crear un nuevo estado domicilio",
+                "operationId": "19c3f8164983a496b2af98e71d9d3374",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "nombre": {
+                                                "type": "string"
+                                            },
+                                            "codename": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "nombre": "PENDIENTE",
+                                    "codename": "pendiente"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "CREATED"
+                    }
+                }
+            }
+        },
+        "/api/estado_domicilio/{id}": {
+            "get": {
+                "tags": [
+                    "estado_domicilio"
+                ],
+                "summary": "Mostrar la información de un estado domicilio",
+                "operationId": "47cf05aeef6b2b8dc8a3fb4fc3703b78",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "estado_domicilio"
+                ],
+                "summary": "Actualizar un estado domicilio",
+                "operationId": "f3d972df3961a8ab5a57e0bec63f3d97",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "nombre": {
+                                                "type": "string"
+                                            },
+                                            "codename": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "nombre": "PENDIENTE",
+                                    "codename": "pendiente"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "estado_domicilio"
+                ],
+                "summary": "Eliminar un estado domicilio",
+                "operationId": "2ab061b0a33cdb617be682504c9dbce9",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS"
+                    }
+                }
+            }
+        },
+        "/api/estado_venta": {
+            "get": {
+                "tags": [
+                    "estado_venta"
+                ],
+                "summary": "Muestra todos los estados venta",
+                "description": "Muestra todos los estados venta.",
+                "operationId": "58386dc499e1310d07d89469af53e4d6",
+                "responses": {
+                    "200": {
+                        "description": "Muestra todos los estados venta"
+                    },
+                    "500": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "estado_venta"
+                ],
+                "summary": "Crear un nuevo estado venta",
+                "operationId": "a8e4391e7aa7892fd4a01c04ce40d856",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "nombre": {
+                                                "type": "string"
+                                            },
+                                            "codename": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "nombre": "PENDIENTE",
+                                    "codename": "pendiente"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "CREATED"
+                    }
+                }
+            }
+        },
+        "/api/estado_venta/{id}": {
+            "get": {
+                "tags": [
+                    "estado_venta"
+                ],
+                "summary": "Mostrar la información de un estado venta",
+                "operationId": "5e83843205a065e20c9585fb77172051",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "estado_venta"
+                ],
+                "summary": "Actualizar un estado venta",
+                "operationId": "53e9fbd1203fb22153d97a352fc84b90",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "nombre": {
+                                                "type": "string"
+                                            },
+                                            "codename": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "nombre": "PENDIENTE",
+                                    "codename": "pendiente"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "estado_venta"
+                ],
+                "summary": "Eliminar un estado venta",
+                "operationId": "a1279ee57f3405a63be5d08303394a44",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS"
+                    }
+                }
+            }
+        },
+        "/api/metodo_pago": {
+            "get": {
+                "tags": [
+                    "metodo_pago"
+                ],
+                "summary": "Muestra todos los metodos de pago",
+                "description": "Muestra todos los metodos de pago.",
+                "operationId": "40ee9c2a49b6d3ef89f07425c954d5c9",
+                "responses": {
+                    "200": {
+                        "description": "Muestra todos los metodos de pago"
+                    },
+                    "500": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "metodo_pago"
+                ],
+                "summary": "Crear un nuevo metodo de pago",
+                "operationId": "483cf3691dc2b0ab453265585d0f943f",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "nombre": {
+                                                "type": "string"
+                                            },
+                                            "codename": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "nombre": "EFECTIVO",
+                                    "codename": "cash"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "CREATED"
+                    }
+                }
+            }
+        },
+        "/api/metodo_pago/{id}": {
+            "get": {
+                "tags": [
+                    "metodo_pago"
+                ],
+                "summary": "Mostrar la información de un metodo de pago",
+                "operationId": "cd231a78e907474e479ef247989b7798",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "metodo_pago"
+                ],
+                "summary": "Actualizar un metodo de pago",
+                "operationId": "2ea34f9389aadc364ee224d050fe2e90",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "nombre": {
+                                                "type": "string"
+                                            },
+                                            "codename": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "nombre": "EFECTIVO",
+                                    "codename": "cash"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "metodo_pago"
+                ],
+                "summary": "Eliminar un metodo de pago",
+                "operationId": "5f32d74dcc63a75533bd819c13bd395a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS"
+                    }
+                }
+            }
+        },
+        "/api/repartidor": {
+            "get": {
+                "tags": [
+                    "Repartidor"
+                ],
+                "summary": "Muestra todos los Repartidores",
+                "description": "Muestra todos los Repartidores.",
+                "operationId": "eac43c330d2d24e30bc81c7aa63168d5",
+                "responses": {
+                    "200": {
+                        "description": "Muestra todos los Repartidores"
+                    },
+                    "500": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Repartidor"
+                ],
+                "summary": "Crear un nuevo Repartidor",
+                "operationId": "79aa26e5def31ae1521ef2f2b9d95f03",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "id_tipo_identificacion": {
+                                                "type": "integer"
+                                            },
+                                            "identificacion": {
+                                                "type": "string"
+                                            },
+                                            "nombre": {
+                                                "type": "string"
+                                            },
+                                            "email": {
+                                                "type": "string"
+                                            },
+                                            "celular": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id_tipo_identificacion": 1,
+                                    "identificacion": "1242142",
+                                    "nombre": "Jhon Doe",
+                                    "email": "jdoe@gmail.com",
+                                    "celular": "122132425"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "CREATED"
+                    }
+                }
+            }
+        },
+        "/api/repartidor/{id}": {
+            "get": {
+                "tags": [
+                    "Repartidor"
+                ],
+                "summary": "Mostrar la información de un Repartidor",
+                "operationId": "dfb35ad4820ad0b36b2b2ea167be6334",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Repartidor"
+                ],
+                "summary": "Actualizar un nuevo Repartidor",
+                "operationId": "53f3a00490977d01f100ea86e2ebb2b8",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "id_tipo_identificacion": {
+                                                "type": "integer"
+                                            },
+                                            "identificacion": {
+                                                "type": "string"
+                                            },
+                                            "nombre": {
+                                                "type": "string"
+                                            },
+                                            "email": {
+                                                "type": "string"
+                                            },
+                                            "celular": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id_tipo_identificacion": 1,
+                                    "identificacion": "1242142",
+                                    "nombre": "Jhon Doe",
+                                    "email": "jdoe@gmail.com",
+                                    "celular": "122132425"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Repartidor"
+                ],
+                "summary": "Eliminar un Repartidor",
+                "operationId": "b9f1cc77decc4329d66a4a291e2bf782",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "object",
+                                            "example": {
+                                                "msg": "Se ha eliminado el Repartidor correctamente",
+                                                "Repartidor": {
+                                                    "id": 1,
+                                                    "nombre": "CÉDULA DE CIUDADANÍA",
+                                                    "codename": "CC",
+                                                    "created_at": "2023-11-03T03:06:55.000000Z",
+                                                    "updated_at": "2023-11-03T03:06:55.000000Z"
+                                                }
+                                            }
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/api/tipo_identificacion": {
             "get": {
                 "tags": [
@@ -67,33 +1278,7 @@
                 },
                 "responses": {
                     "201": {
-                        "description": "CREATED",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "data": {
-                                            "type": "object",
-                                            "example": {
-                                                "msg": "Se ha creado el tipo de identificación correctamente",
-                                                "tipo_identificacion": {
-                                                    "id": 1,
-                                                    "nombre": "CÉDULA DE CIUDADANÍA",
-                                                    "codename": "CC",
-                                                    "created_at": "2023-11-03T03:06:55.000000Z",
-                                                    "updated_at": "2023-11-03T03:06:55.000000Z"
-                                                }
-                                            }
-                                        },
-                                        "success": {
-                                            "type": "boolean",
-                                            "example": true
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
+                        "description": "CREATED"
                     }
                 }
             }
@@ -165,33 +1350,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "SUCCESS",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "data": {
-                                            "type": "object",
-                                            "example": {
-                                                "msg": "Se ha actualizado el tipo de identificación correctamente",
-                                                "tipo_identificacion": {
-                                                    "id": 1,
-                                                    "nombre": "CÉDULA DE CIUDADANÍA",
-                                                    "codename": "CC",
-                                                    "created_at": "2023-11-03T03:06:55.000000Z",
-                                                    "updated_at": "2023-11-03T03:06:55.000000Z"
-                                                }
-                                            }
-                                        },
-                                        "success": {
-                                            "type": "boolean",
-                                            "example": true
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
+                        "description": "SUCCESS"
                     }
                 }
             },
@@ -213,33 +1372,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "SUCCESS",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "data": {
-                                            "type": "object",
-                                            "example": {
-                                                "msg": "Se ha eliminado el tipo de identificación correctamente",
-                                                "tipo_identificacion": {
-                                                    "id": 1,
-                                                    "nombre": "CÉDULA DE CIUDADANÍA",
-                                                    "codename": "CC",
-                                                    "created_at": "2023-11-03T03:06:55.000000Z",
-                                                    "updated_at": "2023-11-03T03:06:55.000000Z"
-                                                }
-                                            }
-                                        },
-                                        "success": {
-                                            "type": "boolean",
-                                            "example": true
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
+                        "description": "SUCCESS"
                     }
                 }
             }

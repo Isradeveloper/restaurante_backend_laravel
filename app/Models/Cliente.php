@@ -22,7 +22,7 @@ class Cliente extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function direccion(): HasMany
+    public function direcciones(): HasMany
     {
         return $this->hasMany(DireccionCliente::class, 'id_cliente',);
     }

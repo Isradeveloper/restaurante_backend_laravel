@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('cliente', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_tipo_identificacion')->references('id')->on('tipo_identificacion');
+            $table->string('identificacion')->unique(true);
             $table->string('nombre');
             $table->string('email');
             $table->string('celular');

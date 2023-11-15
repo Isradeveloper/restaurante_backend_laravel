@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class DireccionCliente extends Model
 {
     use HasFactory;
-    protected $table = 'direccio_cliente';
+    protected $table = 'direccion_cliente';
 
     /**
      * Get the cliente that owns the DireccionCliente
