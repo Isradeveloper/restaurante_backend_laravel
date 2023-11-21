@@ -366,6 +366,206 @@
                 }
             }
         },
+        "/api/detalle_venta": {
+            "get": {
+                "tags": [
+                    "detalle_venta"
+                ],
+                "summary": "Muestra todas las detalle_venta",
+                "description": "Muestra todas las detalle_venta.",
+                "operationId": "ca70cf167e568b30b201e94f9b965ff2",
+                "responses": {
+                    "200": {
+                        "description": "Muestra todas las detalle_venta"
+                    },
+                    "500": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "detalle_venta"
+                ],
+                "summary": "Crear una nueva detalle venta",
+                "operationId": "ef360ce063408f22fff98a47e9dba200",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "id_venta": {
+                                                "type": "integer"
+                                            },
+                                            "id_producto": {
+                                                "type": "integer"
+                                            },
+                                            "cantidad": {
+                                                "type": "integer"
+                                            },
+                                            "total": {
+                                                "type": "string"
+                                            },
+                                            "descuento": {
+                                                "type": "sting"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id_venta": 1,
+                                    "id_producto": "1",
+                                    "cantidad": "2",
+                                    "total": "20000",
+                                    "descuento": "0"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "CREATED"
+                    }
+                }
+            }
+        },
+        "/api/detalle_venta/{id}": {
+            "get": {
+                "tags": [
+                    "detalle_venta"
+                ],
+                "summary": "Mostrar la información de una detalle venta",
+                "operationId": "def5072a2dbc45beaf5c2396079ce9d7",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "detalle_venta"
+                ],
+                "summary": "Actualizar una detalle_venta",
+                "operationId": "a3754b8014531f24a4c49ec1cea58311",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "id_venta": {
+                                                "type": "integer"
+                                            },
+                                            "id_producto": {
+                                                "type": "integer"
+                                            },
+                                            "cantidad": {
+                                                "type": "integer"
+                                            },
+                                            "total": {
+                                                "type": "string"
+                                            },
+                                            "descuento": {
+                                                "type": "sting"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id_venta": 1,
+                                    "id_producto": "1",
+                                    "cantidad": "2",
+                                    "total": "20000",
+                                    "descuento": "0"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "detalle_venta"
+                ],
+                "summary": "Eliminar una detalle venta",
+                "operationId": "62e6c12b67d1cbc2559d8d7b8c3fb80a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "object",
+                                            "example": {
+                                                "msg": "Se ha eliminado la detalle_venta correctamente",
+                                                "detalle_venta": {
+                                                    "id": 1,
+                                                    "nombre": "CÉDULA DE CIUDADANÍA",
+                                                    "codename": "CC",
+                                                    "created_at": "2023-11-03T03:06:55.000000Z",
+                                                    "updated_at": "2023-11-03T03:06:55.000000Z"
+                                                }
+                                            }
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/api/direccion_cliente": {
             "get": {
                 "tags": [
@@ -556,6 +756,198 @@
                                             "example": {
                                                 "msg": "Se ha eliminado el cliente correctamente",
                                                 "cliente": {
+                                                    "id": 1,
+                                                    "nombre": "CÉDULA DE CIUDADANÍA",
+                                                    "codename": "CC",
+                                                    "created_at": "2023-11-03T03:06:55.000000Z",
+                                                    "updated_at": "2023-11-03T03:06:55.000000Z"
+                                                }
+                                            }
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/domicilio": {
+            "get": {
+                "tags": [
+                    "domicilio"
+                ],
+                "summary": "Muestra todos los domicilios",
+                "description": "Muestra todos los domicilios.",
+                "operationId": "99d25e350cb78d0e2adc7a7cfb31a597",
+                "responses": {
+                    "200": {
+                        "description": "Muestra todos los domicilios"
+                    },
+                    "500": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "domicilio"
+                ],
+                "summary": "Crear un nuevo domicilio",
+                "operationId": "e06c95ffa9dc75e6f9e51c0d35719319",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "id_repartidor": {
+                                                "type": "integer"
+                                            },
+                                            "id_estado_domicilio": {
+                                                "type": "integer"
+                                            },
+                                            "direccion": {
+                                                "type": "string"
+                                            },
+                                            "instrucciones_adicionales": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id_repartidor": 1,
+                                    "id_estado_domicilio": "1",
+                                    "direccion": "Calle 58 con carrera 45",
+                                    "instrucciones_adicionales": "Dejar en portería"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "CREATED"
+                    }
+                }
+            }
+        },
+        "/api/domicilio/{id}": {
+            "get": {
+                "tags": [
+                    "domicilio"
+                ],
+                "summary": "Mostrar la información de un domicilio",
+                "operationId": "e034553999d087c0b6b5d257a04bf88a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "domicilio"
+                ],
+                "summary": "Actualizar un nuevo domicilio",
+                "operationId": "45572ba56fb202b145677adae91c3cad",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "id_repartidor": {
+                                                "type": "integer"
+                                            },
+                                            "id_estado_domicilio": {
+                                                "type": "integer"
+                                            },
+                                            "direccion": {
+                                                "type": "string"
+                                            },
+                                            "instrucciones_adicionales": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id_repartidor": 1,
+                                    "id_estado_domicilio": "1",
+                                    "direccion": "Calle 58 con carrera 45",
+                                    "instrucciones_adicionales": "Dejar en portería"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "domicilio"
+                ],
+                "summary": "Eliminar un domicilio",
+                "operationId": "8a34dcd3a6ec5065e2e135f8cda60529",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "object",
+                                            "example": {
+                                                "msg": "Se ha eliminado el domicilio correctamente",
+                                                "domicilio": {
                                                     "id": 1,
                                                     "nombre": "CÉDULA DE CIUDADANÍA",
                                                     "codename": "CC",
@@ -1027,6 +1419,214 @@
                 }
             }
         },
+        "/api/producto": {
+            "get": {
+                "tags": [
+                    "producto"
+                ],
+                "summary": "Muestra todos los productos",
+                "description": "Muestra todos los productos.",
+                "operationId": "0ae2747cdd1920ea98ae53f68e021678",
+                "responses": {
+                    "200": {
+                        "description": "Muestra todos los productos"
+                    },
+                    "500": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "producto"
+                ],
+                "summary": "Crear un nuevo producto",
+                "operationId": "31a377e56d699faab358339be17a750e",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "id_categoria_producto": {
+                                                "type": "integer"
+                                            },
+                                            "precio": {
+                                                "type": "string"
+                                            },
+                                            "nombre": {
+                                                "type": "string"
+                                            },
+                                            "descripcion": {
+                                                "type": "string"
+                                            },
+                                            "stock": {
+                                                "type": "integer"
+                                            },
+                                            "imagen": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id_categoria_producto": 1,
+                                    "precio": "10000",
+                                    "nombre": "Hamburguesa sencilla",
+                                    "descripcion": "Pan artesanal de papa, carne angus y vegetales frescos",
+                                    "stock": 50,
+                                    "imagen": "https://static01.nyt.com/images/2023/05/25/multimedia/SS-Smashburger-update-vzhf/SS-Smashburger-update-vzhf-videoSixteenByNineJumbo1600.jpg"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "CREATED"
+                    }
+                }
+            }
+        },
+        "/api/producto/{id}": {
+            "get": {
+                "tags": [
+                    "producto"
+                ],
+                "summary": "Mostrar la información de un producto",
+                "operationId": "af41299eb66ce2d7e6a7c81112895d23",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "producto"
+                ],
+                "summary": "Actualizar un nuevo producto",
+                "operationId": "e295410d9e6c7e46dd5cb53161d676ab",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "id_categoria_producto": {
+                                                "type": "integer"
+                                            },
+                                            "precio": {
+                                                "type": "string"
+                                            },
+                                            "nombre": {
+                                                "type": "string"
+                                            },
+                                            "descripcion": {
+                                                "type": "string"
+                                            },
+                                            "stock": {
+                                                "type": "integer"
+                                            },
+                                            "imagen": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id_categoria_producto": 1,
+                                    "precio": "10000",
+                                    "nombre": "Hamburguesa sencilla",
+                                    "descripcion": "Pan artesanal de papa, carne angus y vegetales frescos",
+                                    "stock": 50,
+                                    "imagen": "https://static01.nyt.com/images/2023/05/25/multimedia/SS-Smashburger-update-vzhf/SS-Smashburger-update-vzhf-videoSixteenByNineJumbo1600.jpg"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "producto"
+                ],
+                "summary": "Eliminar un producto",
+                "operationId": "26f9b1a91c32db076a712a31ed7ddd2c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "object",
+                                            "example": {
+                                                "msg": "Se ha eliminado el producto correctamente",
+                                                "producto": {
+                                                    "id": 1,
+                                                    "nombre": "CÉDULA DE CIUDADANÍA",
+                                                    "codename": "CC",
+                                                    "created_at": "2023-11-03T03:06:55.000000Z",
+                                                    "updated_at": "2023-11-03T03:06:55.000000Z"
+                                                }
+                                            }
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/api/repartidor": {
             "get": {
                 "tags": [
@@ -1373,6 +1973,308 @@
                 "responses": {
                     "200": {
                         "description": "SUCCESS"
+                    }
+                }
+            }
+        },
+        "/api/registrar/usuario": {
+            "post": {
+                "tags": [
+                    "Usuarios"
+                ],
+                "summary": "Registrar un usuario",
+                "operationId": "cc69d301a5017cb30f03d1ddf34e55d9",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "nombre": {
+                                                "type": "string"
+                                            },
+                                            "username": {
+                                                "type": "string"
+                                            },
+                                            "email": {
+                                                "type": "string"
+                                            },
+                                            "password": {
+                                                "type": "string"
+                                            },
+                                            "celular": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "nombre": "Israel David Trujillo",
+                                    "username": "itrujill",
+                                    "email": "itrujill@cuc.edu.co",
+                                    "password": "12345678",
+                                    "celular": "3023691487"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "CREATED"
+                    }
+                }
+            }
+        },
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "Usuarios"
+                ],
+                "summary": "Login de usuario",
+                "operationId": "5c39f8cf7d73571242bc6d8557d0b592",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "username": {
+                                                "type": "string"
+                                            },
+                                            "password": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "username": "itrujill",
+                                    "password": "12345678"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success Login"
+                    }
+                }
+            }
+        },
+        "/api/venta": {
+            "get": {
+                "tags": [
+                    "venta"
+                ],
+                "summary": "Muestra todas las ventas",
+                "description": "Muestra todas las ventas.",
+                "operationId": "3f335e585fbb86da37fc60d95a9b6966",
+                "responses": {
+                    "200": {
+                        "description": "Muestra todas las ventas"
+                    },
+                    "500": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "venta"
+                ],
+                "summary": "Crear una nueva venta",
+                "operationId": "c85fed67e259457ac4f200d8a6ef9691",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "id_domicilio": {
+                                                "type": "integer"
+                                            },
+                                            "id_metodo_pago": {
+                                                "type": "integer"
+                                            },
+                                            "id_usuario": {
+                                                "type": "integer"
+                                            },
+                                            "id_estado_venta": {
+                                                "type": "integer"
+                                            },
+                                            "id_cliente": {
+                                                "type": "integer"
+                                            },
+                                            "total": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id_domicilio": 1,
+                                    "id_metodo_pago": "1",
+                                    "id_usuario": "1",
+                                    "id_estado_venta": "1",
+                                    "id_cliente": "1",
+                                    "total": "0"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "CREATED"
+                    }
+                }
+            }
+        },
+        "/api/venta//{id}": {
+            "get": {
+                "tags": [
+                    "venta"
+                ],
+                "summary": "Mostrar la información de una venta",
+                "operationId": "22a9689e20b5de527f389837a519fed0",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/venta/{id}": {
+            "put": {
+                "tags": [
+                    "venta"
+                ],
+                "summary": "Actualizar una venta",
+                "operationId": "a7f18b48771bc8602064d90c9cdb05d8",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "id_domicilio": {
+                                                "type": "integer"
+                                            },
+                                            "id_metodo_pago": {
+                                                "type": "integer"
+                                            },
+                                            "id_usuario": {
+                                                "type": "integer"
+                                            },
+                                            "id_estado_venta": {
+                                                "type": "integer"
+                                            },
+                                            "id_cliente": {
+                                                "type": "integer"
+                                            },
+                                            "total": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id_domicilio": 1,
+                                    "id_metodo_pago": 1,
+                                    "id_usuario": 1,
+                                    "id_estado_venta": 1,
+                                    "id_cliente": 1,
+                                    "total": "0"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "venta"
+                ],
+                "summary": "Eliminar una venta",
+                "operationId": "d19f53f6001f447b5f391833bce700e3",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "object",
+                                            "example": {
+                                                "msg": "Se ha eliminado la venta correctamente",
+                                                "venta": {
+                                                    "id": 1,
+                                                    "nombre": "CÉDULA DE CIUDADANÍA",
+                                                    "codename": "CC",
+                                                    "created_at": "2023-11-03T03:06:55.000000Z",
+                                                    "updated_at": "2023-11-03T03:06:55.000000Z"
+                                                }
+                                            }
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     }
                 }
             }

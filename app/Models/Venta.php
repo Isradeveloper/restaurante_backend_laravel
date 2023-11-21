@@ -13,6 +13,20 @@ class Venta extends Model
     protected $table = 'venta';
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'id_domicilio',
+        'id_metodo_pago',
+        'id_usuario',
+        'id_estado_venta',
+        'id_cliente',
+        'total'
+    ];
+
+    /**
      * Get the domicilio that owns the Venta
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
